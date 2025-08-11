@@ -1,0 +1,78 @@
+1️⃣ Learn Cypress Basics (foundation before replication)
+Understand Cypress architecture – how it runs inside browser but controls via Node.js process.
+
+Learn basic test structure (describe, it, hooks like before, beforeEach).
+
+Learn selectors & commands (cy.get(), cy.contains(), cy.click(), etc.).
+
+Learn custom commands for reusable actions (like Playwright helper methods).
+
+Understand fixtures (loading test data from JSON).
+
+Learn how Cypress handles async automatically (no await needed).
+
+2️⃣ Build POM Structure (Playwright model → Cypress model)
+Create a pages folder – each page = class-like JS/TS file with methods for actions & assertions.
+
+Keep test data separate (in /fixtures or via an external JSON file).
+
+Implement Allure steps inside page methods (like Playwright’s @allure.step).
+
+Add assertions inside POM methods (just like your Playwright style).
+
+3️⃣ Allure Reporting Setup
+Install Cypress Allure plugin (@shelex/cypress-allure-plugin).
+
+Configure cypress.config.js with Allure writer plugin in setupNodeEvents.
+
+Enable video & screenshots in config.
+
+In page methods, wrap actions in Allure steps.
+
+Set hooks (afterEach) to take screenshots automatically on failure.
+
+Run tests with allure results directory, then generate report (allure serve).
+
+4️⃣ Parallel Execution
+Understand Cypress parallelization on CLI (--parallel --record with dashboard OR split tests via multiple runners in CI).
+
+If using Docker/Jenkins, split spec files across different containers/nodes.
+
+Keep browser launch lightweight (headless mode for CI).
+
+5️⃣ Dockerize Cypress
+Choose official Cypress Docker image (cypress/included) for ease.
+
+Copy your test code & config into container.
+
+Mount volumes for:
+
+Test code
+
+Allure results output folder (so host can access)
+
+Run Cypress inside container headlessly.
+
+6️⃣ Jenkins Integration
+Install Allure Jenkins plugin.
+
+In Jenkins pipeline:
+
+Spin up Cypress in Docker (if using containers).
+
+Run tests, output allure-results.
+
+Use allure serve or Jenkins Allure plugin to publish.
+
+Add parallel stages in Jenkinsfile for parallel execution.
+
+7️⃣ Advanced Utilities (Optional but recommended)
+Use Cypress tasks for:
+
+File system operations (reading/writing JSON)
+
+Calling backend APIs
+
+Generating runtime data (like Faker) before tests start
+
+Add custom commands in cypress/support/commands.js for repetitive actions.
