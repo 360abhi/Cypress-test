@@ -1,0 +1,12 @@
+| XPath                             | CSS                 |
+| --------------------------------- | ------------------- |
+| `//tag`                           | `tag`               |
+| `//*[@id='foo']`                  | `#foo`              |
+| `//*[@class='bar']`               | `.bar`              |
+| `//tag[@attr='val']`              | `tag[attr='val']`   |
+| `//tag[contains(@attr,'val')]`    | `tag[attr*='val']`  |
+| `//tag[starts-with(@attr,'val')]` | `tag[attr^='val']`  |
+| `//tag[ends-with(@attr,'val')]`   | `tag[attr$='val']`  |
+| `//parent/child`                  | `parent > child`    |
+| `//parent//child`                 | `parent child`      |
+| `(//tag)[1]`                      | `tag:first-of-type` |
