@@ -1,0 +1,37 @@
+cy.visit(url) — open page
+
+cy.get(selector) — find element by CSS selector
+
+cy.xpath(xpath) — find element using XPath (requires plugin)
+
+cy.contains(text) — find element by text
+
+cy.type(text) — type into input
+
+cy.click() — click element
+
+cy.clear() — clear an input
+
+cy.should('be.visible') / .should('have.text', 'x') — assertions
+
+cy.url().should('include', '/dashboard') — assert URL
+
+cy.fixture('file.json') — load fixture data
+
+cy.screenshot(name) — take a screenshot
+
+cy.log('msg') — test log
+
+cy.request() — make network request (for setup/cleanup)
+
+cy.intercept() — stub or observe network calls
+
+cy.then(cb) — get values after Cypress commands resolve
+
+cy.wrap(value) — bring a non-Cypress value or a promise into Cypress chain (important!)
+
+cy.task('name', arg) — run Node-side tasks (file I/O, DB seed) from tests
+
+cy.session() — cache/auth session between tests (speed up login)
+
+cy.allure().step('text') & cy.allure().attachment(...) — Allure steps/attachments (if plugin installed)
