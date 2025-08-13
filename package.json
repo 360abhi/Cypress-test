@@ -6,8 +6,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "cypress run --browser chrome --headless",
-    "test:ui": "cypress open", 
+    "test": "cypress run --browser electron --headless",
+    "test:ui": "cypress open",
     "report": "npx serve cypress/reports -p 3000",
     "test-and-view": "npm run test && npm run report",
     "codespace-setup": "apt-get update && apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb"
@@ -22,5 +22,8 @@
     "mochawesome-merge": "^5.0.0",
     "mochawesome-report-generator": "^6.2.0"
   },
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "xvfb": "^0.4.0"
+  }
 }

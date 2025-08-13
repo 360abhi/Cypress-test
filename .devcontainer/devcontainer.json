@@ -1,0 +1,11 @@
+{
+  "name": "Cypress Codespace",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "features": {},
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-vscode.js-debug", "dbaeumer.vscode-eslint"]
+    }
+  }
+}
