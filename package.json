@@ -1,16 +1,18 @@
 {
   "name": "cypx",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
     "test": "cypress run --browser electron --headless",
+    "test:chrome": "cypress run --browser chrome --headless=new",
     "test:ui": "cypress open",
     "report": "npx serve cypress/reports -p 3000",
     "test-and-view": "npm run test && npm run report",
-    "codespace-setup": "apt-get update && apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb"
+    "codespace-setup": "apt-get update && apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libnss3 libxss1 libasound2 libxtst6 xauth"
   },
   "keywords": [],
   "author": "",
@@ -21,9 +23,5 @@
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^5.0.0",
     "mochawesome-report-generator": "^6.2.0"
-  },
-  "description": "",
-  "dependencies": {
-    "xvfb": "^0.4.0"
   }
 }
