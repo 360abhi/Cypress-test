@@ -17,6 +17,7 @@ export class Login {
         cy.get(this.login_btn).click()
     }
 
+
     loginAll(uname,pass){
         this.enterUsername(uname)
         this.enterPassword(pass)

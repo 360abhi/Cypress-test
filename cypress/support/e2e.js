@@ -14,5 +14,9 @@
 // ***********************************************************
 
 // Import commands.js using ES2015 syntax:
+import '@shelex/cypress-allure-plugin';
 import './commands'
 require('cypress-xpath');
+
+// Filter out default Cypress commands from Allure
+// Cypress.Allure.reporterSetup.addLabel('hidden', 'true');

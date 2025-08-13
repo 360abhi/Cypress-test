@@ -1,10 +1,19 @@
 [
   {
     "username" :"standard_user",
-    "password":"secret_sauce"
+    "password":"secret_sauce",
+    "Validation" : {
+      "type": "element",
+      "element":"#error",
+      "message" : "Your username is invalid!"
+    }
   },
   {
-    "username" :"standard_user",
-    "password":"secret_sauce"
+    "username" :"student",
+    "password":"Password123",
+    "Validation":{
+      "type":"url",
+      "url":"practicetestautomation.com/logged-in-successfully/"
+    }
   }
 ]

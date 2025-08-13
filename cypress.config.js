@@ -1,16 +1,23 @@
 const { defineConfig } = require('cypress');
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
   e2e: {
-    // Your e2e configuration
+    baseUrl: "https://practicetestautomation.com/practice-test-login/",
+    setupNodeEvents(on, config) {
+       allureWriter(on, config, {
+        hideCyCommands: true,
+      });
+      return config;
+    },
+    env: {
+      allure: true,
+      allureReuseAfterSpec: false, // Try setting this to false
+      allureAddVideoOnPass: true,
+      allureAttachRequests: true
+    }
   },
-  reporter: 'mochawesome',
-  reporterOptions: {
-    reportDir: 'cypress/reports',
-    overwrite: false,
-    html: true,    // Enable HTML report
-    json: false,   // Disable JSON output
-    reportFilename: 'index',  // Name the file 'index.html'
-  },
-  video: false     // Optional: Disable videos if not needed
+  video: false,
+  trashAssetsBeforeRuns: true,
+  allureResultsPath: 'allure-results' // Explicitly set results path
 });
